@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+       
+
+        .content {
+  max-width: 500px;
+  margin: auto;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+
+
+        </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+        <!-- Page content -->
+ 
+   <p>Source file folder
+    <div >
+        
+<form action="/">
+  <input type="file" id="myFile" name="filename"  style="text-align: right;     margin-left:75%;/">
+  </form>
+     
+    </div>
+</p> 
+
+
+<br>
+    Prompt questions
+    
+
+        <form id="my-form">
+            <input type="text" name="name"   style="height:200px;font-size:14pt;  ">
+           
+
+              <input type="submit"   style="text-align: right;     margin-left:75%;/">
+            </form>
+
+            <br><br><br><br>
+            <div id="result"></div>
+       
+        </div>
+             
+
+ 
+    </div>
+
+   
+  
+
+    </p>
+   
+    </div>
+
+
+
+
+<script>
+const form = document.getElementById("my-form"); // get the form element
+form.addEventListener("submit", e => {
+// detect once the submit button is clicked
+e.preventDefault(); // Don't allow the form to redirect to another page
+const {
+elements
+} = form; // Get input elements so we can retrieve their values
+
+const output = {
+name: elements.name.value // get name
+  };
+localStorage.setItem("save", JSON.stringify(output)); // save output to localStorage
+// Create a template
+
+// Create a template
+const template =
+`<table>
+<tr>
+  <th>Data</th>
+  <th>User Interface</th>
+  <th>.....</th>
+  <th>Actors</th>
+  <th>Pull/Push</th>
+  <th>Actors / functionalities &Value propositions</th>
+</tr>
+<tr>
+  <td>${output.name}</td>
+</tr>
+</table>`;
+
+result.innerHTML = template; // show the result
+});
+
+</script>
+</body>
+</html>
